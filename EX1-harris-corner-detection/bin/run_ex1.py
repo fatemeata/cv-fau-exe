@@ -7,8 +7,9 @@ import ex1
 
 
 if __name__ == "__main__":
-    input_path = os.path.join("data", "ex1", "input.jpg")
-    input = cv2.imread(input_path, cv2.IMREAD_COLOR)
+    # curr_path = os.path.dirname(os.path.abspath(__file__))
+    input_path = os.path.join("../data", "ex1", "input.jpg")
+    input = cv2.imread(input_path)
     gray_float_image = cv2.cvtColor(input, cv2.COLOR_BGR2GRAY).astype(np.float32) / 255.0
     R, A, B, C, Idx, Idy = ex1.compute_harris_response(gray_float_image, k=.06)
     image_names = ["R", "A", "B", "C", "Idx", "Idy"]
